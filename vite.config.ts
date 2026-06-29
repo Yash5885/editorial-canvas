@@ -8,12 +8,18 @@ export default defineConfig({
   tanstackStart: {
     prerender: {
       enabled: true,
-      crawlLinks: true,
       autoSubfolderIndex: true,
+      autoStaticPathsDiscovery: true,
+      crawlLinks: true,
+      retryCount: 0,
     },
 
     server: {
       entry: "server",
     },
+  },
+
+  nitro: {
+    preset: "node-server",
   },
 });
